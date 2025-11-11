@@ -1,7 +1,7 @@
 (() => {
   const hotspots = document.querySelectorAll(".Hotspot");
 
-  const infoBoxes = [
+  const infoFeatures = [
     {
       image: "images/mute.png",
       title: "NOISE CANCELLING",
@@ -25,7 +25,7 @@
 //functions
 
   function loadInfo() {
-    infoBoxes.forEach((infoBox, index)=>{
+    infoFeatures.forEach((infoFeature, index)=>{
       // console.log(index+1);
       //selected will be the inforBox on our page, e.g.hotspot-1, hotspot-2, etc.
       let selected = document.querySelector(`#hotspot-${index+1}`);
@@ -34,17 +34,17 @@
       //lets create an img
       const imageElement = document.createElement('img');
       //lets populate the img
-      imageElement.src = infoBox.image;
+      imageElement.src = infoFeature.image;
 
       //lets create an h2
       const titleElement = document.createElement('h2');
       //lets populate the h2
-      titleElement.textContent = infoBox.title;
+      titleElement.textContent = infoFeature.title;
 
       //lets create a p
       const textElement = document.createElement('p');
       //lets populate the p
-      textElement.textContent = infoBox.text;
+      textElement.textContent = infoFeature.text;
 
       //lets add the img to the selected hotspot
       selected.appendChild(imageElement);
@@ -57,7 +57,7 @@
   }
   loadInfo();
 
-   function showInfo() {
+   function displayInfo() {
     //console.log(this.slot);
     //console.log(`#${this.slot}`);
     //since the slot value matches the id value I can use the slot value as a selector to get to the div I want.
@@ -73,7 +73,7 @@
   }
   
  hotspots.forEach(function (hotspot) {
-    hotspot.addEventListener("mouseenter", showInfo);
+    hotspot.addEventListener("mouseenter", displayInfo);
     hotspot.addEventListener("mouseleave", hideInfo);
   });
 

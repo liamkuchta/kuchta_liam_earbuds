@@ -5,12 +5,14 @@
     {
       image: "images/mute.png",
       title: "NOISE CANCELLING",
-      text: "Noise-cancelling microphones and a rear copper shield are optimally placed to quickly detect outside noises, working together to counter noise before it disturbs your experience."
+      text: "Advanced noise-cancelling technology blocks out background sounds so you can focus completely on your music or calls."
+
     },
     {
       image: "images/earpiece.png",
       title: "LUXURY EARPIECE",
-      text: "Three pairs of ultra comfortable silicone tips are included. The tips create an acoustic seal that blocks outside audio and secures the earbuds in place."
+      text: "A soft, flexible silicone earpiece that gently seals in your ear for a snug, comfortable fit and all-day listening ease."
+
     },
     {
       image: "images/signal.png",

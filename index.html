@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Novo EarBuds</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <header>
+
+    <nav>
+
+      <h2 class="hidden">Header</h2>
+      <h2 class="hidden">logo</h2>
+      <div class="col-span-2 m-col-span-2 l-col-span-2">
+        <h2 id="brand">SPACEBUDS</h2>
+      </div>
+
+      <div class="nav-links">
+        <a href="#">SHOP</a>
+        <a href="#">ABOUT</a>
+        <a href="#">CONTACT</a>
+
+      </div>
+    </nav>
+
+  </header>
+
+  <model-viewer id="model" src="model/EARBUD1.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+    tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+
+    <button class="Hotspot" slot="hotspot-1" data-position="14.391776553090102m 7.9306099802446m 3.952221692282621m"
+      data-normal="-0.026048373780967044m -0.0067021962604819196m 0.9996382159504774m"
+      data-visibility-attribute="visible">
+      <div class="HotspotAnnotation" id="hotspot-1"></div>
+    </button>
+
+    <button class="Hotspot" slot="hotspot-2" data-position="17.68280271477836m 7.063625230482931m 1.927461922219651m"
+      data-normal="0.9414180892844715m -0.16448027956618597m 0.29441164854978896m" data-visibility-attribute="visible">
+      <div class="HotspotAnnotation" id="hotspot-2"></div>
+    </button>
+
+    <button class="Hotspot" slot="hotspot-3" data-position="11.305187387922292m 8.885529720464458m 4.100290681622434m"
+      data-normal="0m -0.0005263930338535904m 0.9999998614551775m" data-visibility-attribute="visible">
+      <div class="HotspotAnnotation" id="hotspot-3"></div>
+    </button>
+
+    <div class="progress-bar hide" slot="progress-bar">
+      <div class="update-bar"></div>
+    </div>
+
+    <button slot="ar-button" id="ar-button">
+      View in your space
+    </button>
+    <div id="ar-prompt">
+      <img src="ar_hand_prompt.png">
+    </div>
+  </model-viewer>
+  <!-- link to greensock main library -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <!-- Loads <model-viewer> for browsers: -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <!-- Our JS folder last -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

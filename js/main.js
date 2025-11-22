@@ -80,3 +80,92 @@
 })();
 
 // In this version, the event listeners use regular functions instead of arrow functions, so the "this" keyword inside the event listeners will refer to the DOM element that triggered the event.
+
+
+
+
+
+
+
+
+// SCROLL ANIMATION SCROLL ANIMATION SCROLL ANIMATION SCROLL ANIMATION SCROLL ANIMATION 
+
+(()=> {
+  console.log("IIFE Called");
+
+  const canvas = document.querySelector("#explode-view");
+  const context = canvas.getContext("2d");
+
+  canvas.width= 1920;
+  canvas.height = 1080;
+
+  //How many still frames do we have, you will need to adjust this
+  const frameCount = 314; 
+
+  //array to hold our images
+  const images = [];
+
+  //object will hold the current frame
+  //we will use GreenSock to animate the frame property
+  const buds = {
+      frame: 0
+  }
+
+  //Run a for loop to populate images array
+  for (let i=0; i<frameCount; i++) {
+      const img = new Image();
+      img.src = `images/render1_${i.toString().padStart(5, '0')}.webp`;
+      images.push(img);
+  }
+  console.log(images);
+
+
+ 
+
+  gsap.to(buds, {
+      frame: 314,
+      snap: "frame",
+      scrollTrigger: {
+          trigger: "#explode-view",
+          pin: true,
+          scrub: 1,
+          start: "top top",
+          markers: true,
+          
+      },
+      onUpdate: render
+  })
+
+  images[0].addEventListener("load", render);
+
+  function render() {
+      //console.log(buds.frame);
+      //console.log(images[buds.frame]);
+      context.clearRect(0,0, canvas.width, canvas.height);
+      context.drawImage(images[buds.frame], 0, 0);
+  }
+
+})();
+
+
+
+
+// SLIDER SLIDER SLIDER SLIDER SLIDER SLIDER SLIDER SLIDER 
+
+(() => {
+
+  const splitLine = document.querySelector("#divisor");
+  const slideHandle = document.querySelector("#slider");
+
+  function moveLine() {
+      // console.log(slider.value);
+      splitLine.style.width = `${slideHandle.value}%`;
+  }
+
+  function resetXray() {
+    slideHandle.value = 50;
+  }
+
+  slideHandle.addEventListener("input", moveLine);
+  window.addEventListener("load", resetXray);
+})();

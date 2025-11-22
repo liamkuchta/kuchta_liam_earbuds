@@ -68,6 +68,83 @@
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
   <!-- Our JS folder last -->
 
+  <section class="grid-con">
+    <div class="col-span-full l-col-start-3 l-col-end-11">
+      <p>So, the Audionaut Signals are for people who are serious about sound—like, they really care about how their
+        music
+        comes across.
+
+        You know how some earbuds just feel... flat? These aren't like that. People who've tried them usually rave about
+        the bass. It's not just a loud rumble; it's deep and controlled, the kind of bass that actually makes hip-hop or
+        rock music feel punchy and alive, without drowning out everything else. They call it 'best bass hands down.'
+
+        The overall sound is often described as crisp and balanced, which is what you want if you're picky. It means the
+        vocals sound clear, the guitars have sparkle, and everything has its own space—not just a jumbled mess. Some
+        people even say they prefer the sound over some of the super famous brands like Sony or Bose.
+
+        Now, on the less-perfect side (because nothing is perfect): you might notice a slight lag when they first
+        connect,
+        maybe a few seconds, which is a tiny bit annoying if you're in a hurry. And a few people mention they might not
+        be
+        the absolute best if you're sweating a lot during an intense workout, so you might need to adjust them.
+
+        But for a pure listening experience? If you're an audiophile or just someone who truly values the quality of the
+        audio over every other feature, these are definitely worth looking into. They're all about giving you that rich,
+        detailed sound.</p>
+    </div>
+  </section>
+
+
+
+  <div>
+    <canvas id="explode-view"></canvas>
+  </div>
+
+
+  <section id="xray-section">
+
+    <div class="grid-con">
+      <div class="col-span-full l-col-start-3 l-col-end-11">
+        <h2> "Signals" by Audionaut </h2>
+        <p>Introducing Harmony Pods, a new earbud company dedicated to elevating the audio experience for everyone.
+          Harmony Pods launched with the goal of combining cutting-edge technology with ergonomic, stylish designs that
+          cater to the diverse needs of modern users. Each pair of Harmony Pods is crafted with premium materials to
+          ensure not only durability but also a sleek aesthetic. From the gym to the office, and everything in between,
+          Harmony Pods are designed to be comfortable, versatile, and long-lasting, providing a seamless listening
+          experience no matter where you are.</p>
+
+        <p>The technology behind Harmony Pods sets them apart in the competitive earbud market. With advanced
+          noise-cancellation, crystal-clear audio, and a deep, rich bass response, these earbuds are perfect for both
+          casual listeners and audiophiles alike. Their Bluetooth connectivity is exceptionally stable, minimizing
+          interruptions and offering a consistent, high-quality sound. The battery life of Harmony Pods is also
+          impressive, allowing users to enjoy up to 12 hours of playtime on a single charge and quick-charge
+          capabilities
+          for those on the go. With customizable touch controls and compatibility with major voice assistants, Harmony
+          Pods blend functionality with innovation.</p>
+
+        <p>Harmony Pods' commitment to sustainability is another aspect that resonates with today's conscious consumers.
+          The company uses eco-friendly packaging and partners with recycling programs to minimize waste. By
+          incorporating
+          recycled materials into their products and processes, Harmony Pods not only delivers a premium audio
+          experience
+          but also supports environmental responsibility. Whether you're listening to your favorite tunes, joining a
+          conference call, or simply seeking a little escape from the noise of the world, Harmony Pods are a reliable
+          and
+          eco-conscious choice that doesn't compromise on quality.</p>
+      </div>
+      <div class="col-span-full l-col-start-3 l-col-end-11">
+        <div id="xray">
+          <div id="divisor"></div>
+          <input type="range" min="0" max="100" value="50" id="slider">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
 
   <footer class="grid-con">
     <div id="footer-text" class="col-start-1 col-span-full 
@@ -108,7 +185,8 @@
 
 
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
 
   <script src="js/main.js"></script>
 </body>

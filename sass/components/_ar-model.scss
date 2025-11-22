@@ -2,9 +2,22 @@ model-viewer {
   width: auto;
   
   height: 1000px;
-  background: radial-gradient(circle at center, #cadbff 0%,   #c0f3bf 100%);
+  background: radial-gradient(circle at center, #a1bfff 0%,   #ffffff 100%);
 
   margin: 0 auto;
+}
+
+
+
+#description p {
+  font-family: "Lexend Zetta";
+  font-size: 18px;
+  color: gray;
+}
+
+#desc-section {
+  margin-bottom: 110px;
+  margin-top: 110px;
 }
 
 .Hotspot {

@@ -169,3 +169,19 @@
   slideHandle.addEventListener("input", moveLine);
   window.addEventListener("load", resetXray);
 })();
+
+
+// TEXT FADE IN
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray("p").forEach((text) => {
+  gsap.from(text, {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    scrollTrigger: {
+      trigger: text
+    }
+  });
+});

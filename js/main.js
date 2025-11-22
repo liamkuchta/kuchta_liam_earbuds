@@ -1,3 +1,61 @@
+
+
+// NAV NAV NAV NAV NAV
+
+console.log("JavaScript File is linked");
+
+const navToggle = document.querySelector('#navToggle');
+const navMenu = document.querySelector('#navMenu');
+
+
+function toggleNavMenu() {
+    console.log("toggle nav function called");
+    navMenu.classList.toggle('running');
+    navToggle.classList.toggle('running');
+    console.log("Navigation menu toggled - running state:", navMenu.classList.contains('running'));
+}
+
+function closeNavMenu() {
+    console.log("close nav function called");
+    navMenu.classList.remove('running');
+    navToggle.classList.remove('running');
+    console.log("Navigation menu closed");
+}
+
+function closeNavMenuOnClickOutside(e) {
+    console.log("click outside nav function called");
+    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+        console.log("clicked outside of nav");
+        closeNavMenu();
+    } else {
+        console.log("clicked inside nav, menu stays open");
+    }
+}
+
+// event listeners
+if (navToggle && navMenu) {
+    console.log("nav elements found ");
+    
+    navToggle.addEventListener('click', toggleNavMenu);
+    console.log("toggle button event listener added");
+
+    const navLinks = navMenu.querySelectorAll('a');
+    console.log("found", navLinks.length, "nav links");
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeNavMenu);
+    });
+    console.log("nav link event listeners added");
+
+    document.addEventListener('click', closeNavMenuOnClickOutside);
+    console.log("document click event listener added");
+    
+} else {
+    console.log("nav elements not found");
+}
+
+
+
 (() => {
   const hotspots = document.querySelectorAll(".Hotspot");
 
@@ -93,17 +151,17 @@
 (()=> {
   console.log("IIFE Called");
 
-  const canvas = document.querySelector("#explode-view");
-  const context = canvas.getContext("2d");
+  const canvasBox = document.querySelector("#explode-view");
+  const context = canvasBox.getContext("2d");
 
-  canvas.width= 1920;
-  canvas.height = 1080;
+  canvasBox.width= 1920;
+  canvasBox.height = 1080;
 
   //How many still frames do we have, you will need to adjust this
   const frameCount = 314; 
 
   //array to hold our images
-  const images = [];
+  const photos = [];
 
   //object will hold the current frame
   //we will use GreenSock to animate the frame property
@@ -115,9 +173,9 @@
   for (let i=0; i<frameCount; i++) {
       const img = new Image();
       img.src = `images/render1_${i.toString().padStart(5, '0')}.webp`;
-      images.push(img);
+      photos.push(img);
   }
-  console.log(images);
+  console.log(photos);
 
 
  
@@ -136,13 +194,13 @@
       onUpdate: render
   })
 
-  images[0].addEventListener("load", render);
+  photos[0].addEventListener("load", render);
 
   function render() {
       //console.log(buds.frame);
       //console.log(images[buds.frame]);
-      context.clearRect(0,0, canvas.width, canvas.height);
-      context.drawImage(images[buds.frame], 0, 0);
+      context.clearRect(0,0, canvasBox.width, canvasBox.height);
+      context.drawImage(photos[buds.frame], 0, 0);
   }
 
 })();
